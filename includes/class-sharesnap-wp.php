@@ -51,7 +51,6 @@ class ShareSnap_WP {
 		$this->plugin_name = 'sharesnap-wp';
 
 		$this->load_dependencies();
-		$this->set_locale();
 		$this->define_admin_hooks();
 	}
 
@@ -69,27 +68,11 @@ class ShareSnap_WP {
 		require_once SHARESNAP_PLUGIN_DIR . 'includes/class-sharesnap-wp-loader.php';
 
 		/**
-		 * The class responsible for defining internationalization functionality.
-		 */
-		require_once SHARESNAP_PLUGIN_DIR . 'includes/class-sharesnap-wp-i18n.php';
-
-		/**
 		 * The class responsible for defining all actions in the admin area.
 		 */
 		require_once SHARESNAP_PLUGIN_DIR . 'admin/class-sharesnap-wp-admin.php';
 
 		$this->loader = new ShareSnap_WP_Loader();
-	}
-
-	/**
-	 * Define the locale for this plugin for internationalization.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function set_locale() {
-		$plugin_i18n = new ShareSnap_WP_i18n();
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 	}
 
 	/**

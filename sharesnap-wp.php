@@ -34,7 +34,7 @@ define( 'SHARESNAP_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 /**
  * The code that runs during plugin activation.
  */
-function activate_sharesnap_wp() {
+function sharesnap_wp_activate() {
     require_once SHARESNAP_PLUGIN_DIR . 'includes/class-sharesnap-wp-activator.php';
     ShareSnap_WP_Activator::activate();
 }
@@ -42,13 +42,13 @@ function activate_sharesnap_wp() {
 /**
  * The code that runs during plugin deactivation.
  */
-function deactivate_sharesnap_wp() {
+function sharesnap_wp_deactivate() {
     require_once SHARESNAP_PLUGIN_DIR . 'includes/class-sharesnap-wp-deactivator.php';
     ShareSnap_WP_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_sharesnap_wp' );
-register_deactivation_hook( __FILE__, 'deactivate_sharesnap_wp' );
+register_activation_hook( __FILE__, 'sharesnap_wp_activate' );
+register_deactivation_hook( __FILE__, 'sharesnap_wp_deactivate' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -59,8 +59,8 @@ require SHARESNAP_PLUGIN_DIR . 'includes/class-sharesnap-wp.php';
 /**
  * Begins execution of the plugin.
  */
-function run_sharesnap_wp() {
+function sharesnap_wp_run() {
     $plugin = new ShareSnap_WP();
     $plugin->run();
 }
-run_sharesnap_wp();
+sharesnap_wp_run();

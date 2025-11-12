@@ -36,7 +36,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="swp-preview-link swp-d-flex swp-alert swp-alert-info swp-mb-3">
 						<div class="post-info">
 							<strong><?php esc_html_e( 'Editing Post:', 'sharesnap-wp' ); ?></strong> <?php echo esc_html( get_the_title( $post_id ) ); ?>
-							<br><small><?php echo esc_html( sprintf( __( 'Post ID: %d', 'sharesnap-wp' ), $post_id ) ); ?></small>
+							<br /><small><?php esc_html_e( 'Post ID:', 'sharesnap-wp' ); 
+							echo absint( $post_id );
+							?></small>
 						</div>
 						<div class="post-link">
 							<a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>" target="_blank" class="swp-d-flex swp-align-items-center goto-post">
@@ -69,8 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 										<div class="swp-poster-logo swp-col-50 swp-float-end">
 											<?php
 											if ( get_custom_logo() ) {
-												// the_custom_logo();
-												echo get_custom_logo();
+												echo esc_html(get_custom_logo());
 											} else {
 												echo '<img class="swp-float-end" src="' . esc_url( SHARESNAP_PLUGIN_URL . 'assets/images/logo.svg' ) . '" alt="' . esc_attr__( 'Logo', 'sharesnap-wp' ) . '">';
 											}
@@ -118,10 +119,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="swp-controls-inner-item swp-flex-column swp-mb-3">
 							<label for="heading_text" class="swp-form-label swp-text-white"><?php esc_html_e( 'Heading Text', 'sharesnap-wp' ); ?></label>
 							<?php
-							$default_content = $post_title ? $post_title : __( 'Northern Lights set to dazzle UK once again tonight', 'sharesnap-wp' );
+							$sharesnap_default_content = $post_title ? $post_title : __( 'Northern Lights set to dazzle UK once again tonight', 'sharesnap-wp' );
 							
 							wp_editor(
-								$default_content,
+								$sharesnap_default_content,
 								'heading_text',
 								array(
 									'textarea_name' => 'heading_text',
