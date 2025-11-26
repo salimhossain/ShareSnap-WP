@@ -147,13 +147,13 @@ sharesnap-wp/
 │   ├── class-sharesnap-wp-admin.php
 │   ├── partials/
 │   │   └── sharesnap-wp-admin-display.php
+├── assets/                    # Shared assets
+│   └── images/
 │   ├── css/
 │   │   └── sharesnap-wp-admin.css
 │   └── js/
 │       ├── sharesnap-wp-admin.js
 │       └── html2canvas.min.js
-├── assets/                    # Shared assets
-│   └── images/
 └── languages/                 # Translation files
 ```
 
