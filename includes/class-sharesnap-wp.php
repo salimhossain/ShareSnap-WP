@@ -68,6 +68,12 @@ class ShareSnap_WP {
 		require_once SHARESNAP_PLUGIN_DIR . 'includes/class-sharesnap-wp-loader.php';
 
 		/**
+		 * The class responsible for defining internationalization functionality
+		 * of the plugin.
+		 */
+		require_once SHARESNAP_PLUGIN_DIR . 'includes/class-testin-i18n.php';
+
+		/**
 		 * The class responsible for defining all actions in the admin area.
 		 */
 		require_once SHARESNAP_PLUGIN_DIR . 'admin/class-sharesnap-wp-admin.php';
