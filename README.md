@@ -192,7 +192,7 @@ Contributions are welcome! Here's how you can help:
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR-USERNAME/ShareSnap-WP.git
+git clone https://github.com/salimhossain/ShareSnap-WP.git
 
 # Create a branch
 cd ShareSnap-WP
