@@ -66,7 +66,7 @@ class ShareSnap_WP_Admin {
 		// Enqueue custom CSS.
 		wp_enqueue_style(
 			$this->plugin_name,
-			SHARESNAP_PLUGIN_URL . 'admin/css/sharesnap-wp-admin.css',
+			SHARESNAP_PLUGIN_URL . 'assets/css/sharesnap-wp-admin.css',
 			array(),
 			$this->version,
 			'all'
@@ -94,7 +94,7 @@ class ShareSnap_WP_Admin {
 		// Enqueue html2canvas.
 		wp_enqueue_script(
 			$this->plugin_name . '-html2canvas',
-			SHARESNAP_PLUGIN_URL . 'admin/js/html2canvas.min.js',
+			SHARESNAP_PLUGIN_URL . 'assets/js/html2canvas.min.js',
 			array(),
 			'1.4.1',
 			true
@@ -103,7 +103,7 @@ class ShareSnap_WP_Admin {
 		// Enqueue custom JS.
 		wp_enqueue_script(
 			$this->plugin_name,
-			SHARESNAP_PLUGIN_URL . 'admin/js/sharesnap-wp-admin.js',
+			SHARESNAP_PLUGIN_URL . 'assets/js/sharesnap-wp-admin.js',
 			array( 'jquery', 'wp-color-picker', $this->plugin_name . '-html2canvas' ),
 			$this->version,
 			true
